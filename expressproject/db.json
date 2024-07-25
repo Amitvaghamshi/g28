@@ -1,22 +1,30 @@
 {
-    "students":[
+    "students": [
         {
-            "name":"chunnu",
-            "city":"delhi"
+            "name": "chunnu",
+            "city": "delhi"
         },
         {
-            "name":"munnu",
-            "city":"banglore"
+            "name": "munnu",
+            "city": "banglore"
+        },
+        {
+            "name": "amit",
+            "city": "surat"
+        },
+        {
+            "name": "virat",
+            "city": "hydrabad"
         }
     ],
-    "teachers":[
+    "teachers": [
         {
-            "name":"venu",
-            "sub":"DSA"
+            "name": "venu",
+            "sub": "DSA"
         },
         {
-            "name":"pulkit",
-            "sub":"coding"
+            "name": "pulkit",
+            "sub": "coding"
         }
     ]
 }
