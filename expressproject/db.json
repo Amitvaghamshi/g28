@@ -1,16 +1,12 @@
 {
     "students": [
         {
-            "name": "chunnu",
-            "city": "delhi"
+            "name": "Keyur",
+            "city": "ahmdabad"
         },
         {
             "name": "munnu",
             "city": "banglore"
-        },
-        {
-            "name": "amit",
-            "city": "surat"
         },
         {
             "name": "virat",

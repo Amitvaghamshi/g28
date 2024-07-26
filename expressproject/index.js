@@ -64,6 +64,44 @@ app.post("/student/save",(req,res)=>{
 });
 
 
+app.delete("/student",(req,res)=>{ 
+    let student_name=req.query.name;
+    let data=fs.readFileSync("./db.json","utf-8");
+    let parsed_data=JSON.parse(data);
+    let allStudents=parsed_data.students;
+    let new_data= allStudents.filter((el)=>{
+           if(el.name==student_name){
+            return false;
+           }else{
+            return true;
+           }
+    });
+    parsed_data.students=new_data;
+    fs.writeFileSync("./db.json",JSON.stringify(parsed_data));
+
+    res.send("STUDENT DELETED");
+});
+
+app.put("/update/:name",(req,res)=>{
+       let student_name=req.params.name;
+       let new_student=req.body;
+       let data=fs.readFileSync("./db.json","utf-8");
+       let parsed_data=JSON.parse(data);
+       let allStudents=parsed_data.students;
+       let new_data=allStudents.map((el)=>{
+           if(el.name==student_name){
+              return new_student;
+           }
+           return el;
+       })
+       parsed_data.students=new_data;
+       fs.writeFileSync("./db.json",JSON.stringify(parsed_data));
+       res.send("STUDENT UPDATED");
+
+})
+
 app.listen(3000,()=>{
     console.log("SERVER IS STARTED ON PORT 3000");
 });
+
+
